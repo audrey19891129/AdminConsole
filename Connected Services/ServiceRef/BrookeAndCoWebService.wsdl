@@ -1,0 +1,4594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="newStockOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="stock_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quant" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newStockOutResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSalesList">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSalesListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getProductByPcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductByPcodeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="modifyProductByPcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quant" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyProductByPcodeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTopTen">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTopTenResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getProducts">
+        <s:complexType />
+      </s:element>
+      <s:element name="getProductsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getBooks">
+        <s:complexType />
+      </s:element>
+      <s:element name="getBooksResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getBooksByCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBooksByCategoryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBookResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteBookResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="createBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="picture" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inventory" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="genre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="bookid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="authors" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pubCo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pubDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createBookResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="updateBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="picture" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inventory" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="genre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="authors" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pubCo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pubDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateBookResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getGames">
+        <s:complexType />
+      </s:element>
+      <s:element name="getGamesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getGamesByCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGamesByCategoryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getGame">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteGame">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteGameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="createGame">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="picture" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inventory" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="genre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="console" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reldate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createGameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="updateGame">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="picture" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inventory" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="genre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="console" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reldate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateGameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMovies">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMoviesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMoviesByCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMoviesByCategoryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMovieResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteMovieResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="createMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="picture" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inventory" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="genre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="director" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="actors" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relyear" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createMovieResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="updateMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="picture" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inventory" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="genre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="director" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="actors" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relyear" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateMovieResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getClients">
+        <s:complexType />
+      </s:element>
+      <s:element name="getClientsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDeliveriesByOrderId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDeliveriesByOrderIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="createShipment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="order_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="address_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="service_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="delivery_date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="total_cost" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createShipmentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="validateClientExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validateClientExistsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getClientByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientByEmailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckUserNameIsFree">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserNameIsFreeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="createClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bday" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="modifyClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bday" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getOrders">
+        <s:complexType />
+      </s:element>
+      <s:element name="getOrdersResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteAllEntriesFromOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAllEntriesFromOrderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getOrdersByClientId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOrdersByClientIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="createNewOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createNewOrderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="modifyOrderStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyOrderStatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getEntries">
+        <s:complexType />
+      </s:element>
+      <s:element name="getEntriesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="addEntryToOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="basket" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addEntryToOrderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteEntryFromOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteEntryFromOrderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteEntryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getEntriesByOrderId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEntriesByOrderIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDeliveryAdress">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDeliveryAdressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDeliveryAdressesByClientId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDeliveryAdressesByClientIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDeliveryAdressById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDeliveryAdressByIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCardsByClientId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCardsByClientIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCardById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="card_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCardByIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="modifyClientCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="holdername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiration" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyClientCardResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteClientCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteClientCardResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="createClientCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="client_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="security_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="holdername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiration" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createClientCardResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="createTemporaryClientCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="client_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="security_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="holdername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiration" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="delete_on" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createTemporaryClientCardResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="modifyDeliveryAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="street" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="civicnumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="appartment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modifyDeliveryAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="createDeliveryAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="street" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="civicnumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="appartment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipcode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="client_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createDeliveryAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="deleteDeliveryAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteDeliveryAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getServicesList">
+        <s:complexType />
+      </s:element>
+      <s:element name="getServicesListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getServiceById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getServiceByIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getClientTransactionById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientTransactionByIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="createClientTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="card_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="transaction_confirmation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="validation" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="order_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createClientTransactionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getStockIns">
+        <s:complexType />
+      </s:element>
+      <s:element name="getStockInsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getStockInListByPcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStockInListByPcodeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getStockOuts">
+        <s:complexType />
+      </s:element>
+      <s:element name="getStockOutsResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="newStockOutSoapIn">
+    <wsdl:part name="parameters" element="tns:newStockOut" />
+  </wsdl:message>
+  <wsdl:message name="newStockOutSoapOut">
+    <wsdl:part name="parameters" element="tns:newStockOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSalesListSoapIn">
+    <wsdl:part name="parameters" element="tns:getSalesList" />
+  </wsdl:message>
+  <wsdl:message name="getSalesListSoapOut">
+    <wsdl:part name="parameters" element="tns:getSalesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductByPcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductByPcode" />
+  </wsdl:message>
+  <wsdl:message name="getProductByPcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductByPcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="modifyProductByPcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:modifyProductByPcode" />
+  </wsdl:message>
+  <wsdl:message name="modifyProductByPcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:modifyProductByPcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTopTenSoapIn">
+    <wsdl:part name="parameters" element="tns:getTopTen" />
+  </wsdl:message>
+  <wsdl:message name="getTopTenSoapOut">
+    <wsdl:part name="parameters" element="tns:getTopTenResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:getProducts" />
+  </wsdl:message>
+  <wsdl:message name="getProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBooksSoapIn">
+    <wsdl:part name="parameters" element="tns:getBooks" />
+  </wsdl:message>
+  <wsdl:message name="getBooksSoapOut">
+    <wsdl:part name="parameters" element="tns:getBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBooksByCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:getBooksByCategory" />
+  </wsdl:message>
+  <wsdl:message name="getBooksByCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:getBooksByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBookSoapIn">
+    <wsdl:part name="parameters" element="tns:getBook" />
+  </wsdl:message>
+  <wsdl:message name="getBookSoapOut">
+    <wsdl:part name="parameters" element="tns:getBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteBookSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteBook" />
+  </wsdl:message>
+  <wsdl:message name="deleteBookSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="createBookSoapIn">
+    <wsdl:part name="parameters" element="tns:createBook" />
+  </wsdl:message>
+  <wsdl:message name="createBookSoapOut">
+    <wsdl:part name="parameters" element="tns:createBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateBookSoapIn">
+    <wsdl:part name="parameters" element="tns:updateBook" />
+  </wsdl:message>
+  <wsdl:message name="updateBookSoapOut">
+    <wsdl:part name="parameters" element="tns:updateBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGamesSoapIn">
+    <wsdl:part name="parameters" element="tns:getGames" />
+  </wsdl:message>
+  <wsdl:message name="getGamesSoapOut">
+    <wsdl:part name="parameters" element="tns:getGamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGamesByCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:getGamesByCategory" />
+  </wsdl:message>
+  <wsdl:message name="getGamesByCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:getGamesByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGameSoapIn">
+    <wsdl:part name="parameters" element="tns:getGame" />
+  </wsdl:message>
+  <wsdl:message name="getGameSoapOut">
+    <wsdl:part name="parameters" element="tns:getGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteGameSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteGame" />
+  </wsdl:message>
+  <wsdl:message name="deleteGameSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="createGameSoapIn">
+    <wsdl:part name="parameters" element="tns:createGame" />
+  </wsdl:message>
+  <wsdl:message name="createGameSoapOut">
+    <wsdl:part name="parameters" element="tns:createGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateGameSoapIn">
+    <wsdl:part name="parameters" element="tns:updateGame" />
+  </wsdl:message>
+  <wsdl:message name="updateGameSoapOut">
+    <wsdl:part name="parameters" element="tns:updateGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMoviesSoapIn">
+    <wsdl:part name="parameters" element="tns:getMovies" />
+  </wsdl:message>
+  <wsdl:message name="getMoviesSoapOut">
+    <wsdl:part name="parameters" element="tns:getMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMoviesByCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:getMoviesByCategory" />
+  </wsdl:message>
+  <wsdl:message name="getMoviesByCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:getMoviesByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:getMovie" />
+  </wsdl:message>
+  <wsdl:message name="getMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:getMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteMovie" />
+  </wsdl:message>
+  <wsdl:message name="deleteMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="createMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:createMovie" />
+  </wsdl:message>
+  <wsdl:message name="createMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:createMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:updateMovie" />
+  </wsdl:message>
+  <wsdl:message name="updateMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:updateMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClientsSoapIn">
+    <wsdl:part name="parameters" element="tns:getClients" />
+  </wsdl:message>
+  <wsdl:message name="getClientsSoapOut">
+    <wsdl:part name="parameters" element="tns:getClientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveriesByOrderIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getDeliveriesByOrderId" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveriesByOrderIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getDeliveriesByOrderIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="createShipmentSoapIn">
+    <wsdl:part name="parameters" element="tns:createShipment" />
+  </wsdl:message>
+  <wsdl:message name="createShipmentSoapOut">
+    <wsdl:part name="parameters" element="tns:createShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateClientExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:validateClientExists" />
+  </wsdl:message>
+  <wsdl:message name="validateClientExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:validateClientExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClientSoapIn">
+    <wsdl:part name="parameters" element="tns:getClient" />
+  </wsdl:message>
+  <wsdl:message name="getClientSoapOut">
+    <wsdl:part name="parameters" element="tns:getClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClientByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:getClientByEmail" />
+  </wsdl:message>
+  <wsdl:message name="getClientByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:getClientByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserNameIsFreeSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserNameIsFree" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserNameIsFreeSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserNameIsFreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="createClientSoapIn">
+    <wsdl:part name="parameters" element="tns:createClient" />
+  </wsdl:message>
+  <wsdl:message name="createClientSoapOut">
+    <wsdl:part name="parameters" element="tns:createClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="modifyClientSoapIn">
+    <wsdl:part name="parameters" element="tns:modifyClient" />
+  </wsdl:message>
+  <wsdl:message name="modifyClientSoapOut">
+    <wsdl:part name="parameters" element="tns:modifyClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteClient" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:getOrders" />
+  </wsdl:message>
+  <wsdl:message name="getOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:getOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEntriesFromOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAllEntriesFromOrder" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEntriesFromOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAllEntriesFromOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOrdersByClientIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getOrdersByClientId" />
+  </wsdl:message>
+  <wsdl:message name="getOrdersByClientIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getOrdersByClientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="createNewOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:createNewOrder" />
+  </wsdl:message>
+  <wsdl:message name="createNewOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:createNewOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="modifyOrderStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:modifyOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="modifyOrderStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:modifyOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:getEntries" />
+  </wsdl:message>
+  <wsdl:message name="getEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:getEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="addEntryToOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:addEntryToOrder" />
+  </wsdl:message>
+  <wsdl:message name="addEntryToOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:addEntryToOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteEntryFromOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteEntryFromOrder" />
+  </wsdl:message>
+  <wsdl:message name="deleteEntryFromOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteEntryFromOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:deleteEntry" />
+  </wsdl:message>
+  <wsdl:message name="deleteEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:deleteEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEntriesByOrderIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getEntriesByOrderId" />
+  </wsdl:message>
+  <wsdl:message name="getEntriesByOrderIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getEntriesByOrderIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveryAdressSoapIn">
+    <wsdl:part name="parameters" element="tns:getDeliveryAdress" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveryAdressSoapOut">
+    <wsdl:part name="parameters" element="tns:getDeliveryAdressResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveryAdressesByClientIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getDeliveryAdressesByClientId" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveryAdressesByClientIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getDeliveryAdressesByClientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveryAdressByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getDeliveryAdressById" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveryAdressByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getDeliveryAdressByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCardsByClientIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getCardsByClientId" />
+  </wsdl:message>
+  <wsdl:message name="getCardsByClientIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getCardsByClientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCardByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getCardById" />
+  </wsdl:message>
+  <wsdl:message name="getCardByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getCardByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="modifyClientCardSoapIn">
+    <wsdl:part name="parameters" element="tns:modifyClientCard" />
+  </wsdl:message>
+  <wsdl:message name="modifyClientCardSoapOut">
+    <wsdl:part name="parameters" element="tns:modifyClientCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientCardSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteClientCard" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientCardSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteClientCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="createClientCardSoapIn">
+    <wsdl:part name="parameters" element="tns:createClientCard" />
+  </wsdl:message>
+  <wsdl:message name="createClientCardSoapOut">
+    <wsdl:part name="parameters" element="tns:createClientCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="createTemporaryClientCardSoapIn">
+    <wsdl:part name="parameters" element="tns:createTemporaryClientCard" />
+  </wsdl:message>
+  <wsdl:message name="createTemporaryClientCardSoapOut">
+    <wsdl:part name="parameters" element="tns:createTemporaryClientCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="modifyDeliveryAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:modifyDeliveryAddress" />
+  </wsdl:message>
+  <wsdl:message name="modifyDeliveryAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:modifyDeliveryAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="createDeliveryAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:createDeliveryAddress" />
+  </wsdl:message>
+  <wsdl:message name="createDeliveryAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:createDeliveryAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteDeliveryAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteDeliveryAddress" />
+  </wsdl:message>
+  <wsdl:message name="deleteDeliveryAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteDeliveryAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServicesListSoapIn">
+    <wsdl:part name="parameters" element="tns:getServicesList" />
+  </wsdl:message>
+  <wsdl:message name="getServicesListSoapOut">
+    <wsdl:part name="parameters" element="tns:getServicesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServiceByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getServiceById" />
+  </wsdl:message>
+  <wsdl:message name="getServiceByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getServiceByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClientTransactionByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getClientTransactionById" />
+  </wsdl:message>
+  <wsdl:message name="getClientTransactionByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getClientTransactionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="createClientTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:createClientTransaction" />
+  </wsdl:message>
+  <wsdl:message name="createClientTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:createClientTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStockInsSoapIn">
+    <wsdl:part name="parameters" element="tns:getStockIns" />
+  </wsdl:message>
+  <wsdl:message name="getStockInsSoapOut">
+    <wsdl:part name="parameters" element="tns:getStockInsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStockInListByPcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:getStockInListByPcode" />
+  </wsdl:message>
+  <wsdl:message name="getStockInListByPcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:getStockInListByPcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStockOutsSoapIn">
+    <wsdl:part name="parameters" element="tns:getStockOuts" />
+  </wsdl:message>
+  <wsdl:message name="getStockOutsSoapOut">
+    <wsdl:part name="parameters" element="tns:getStockOutsResponse" />
+  </wsdl:message>
+  <wsdl:message name="newStockOutHttpGetIn">
+    <wsdl:part name="stock_id" type="s:string" />
+    <wsdl:part name="transaction_id" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="quant" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="newStockOutHttpGetOut" />
+  <wsdl:message name="getSalesListHttpGetIn" />
+  <wsdl:message name="getSalesListHttpGetOut" />
+  <wsdl:message name="getProductByPcodeHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getProductByPcodeHttpGetOut" />
+  <wsdl:message name="modifyProductByPcodeHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="quant" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="modifyProductByPcodeHttpGetOut" />
+  <wsdl:message name="getTopTenHttpGetIn" />
+  <wsdl:message name="getTopTenHttpGetOut" />
+  <wsdl:message name="getProductsHttpGetIn" />
+  <wsdl:message name="getProductsHttpGetOut" />
+  <wsdl:message name="getBooksHttpGetIn" />
+  <wsdl:message name="getBooksHttpGetOut" />
+  <wsdl:message name="getBooksByCategoryHttpGetIn">
+    <wsdl:part name="category" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBooksByCategoryHttpGetOut" />
+  <wsdl:message name="getBookHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBookHttpGetOut" />
+  <wsdl:message name="deleteBookHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteBookHttpGetOut" />
+  <wsdl:message name="createBookHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="bookid" type="s:string" />
+    <wsdl:part name="authors" type="s:string" />
+    <wsdl:part name="pubCo" type="s:string" />
+    <wsdl:part name="pubDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createBookHttpGetOut" />
+  <wsdl:message name="updateBookHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="authors" type="s:string" />
+    <wsdl:part name="pubCo" type="s:string" />
+    <wsdl:part name="pubDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateBookHttpGetOut" />
+  <wsdl:message name="getGamesHttpGetIn" />
+  <wsdl:message name="getGamesHttpGetOut" />
+  <wsdl:message name="getGamesByCategoryHttpGetIn">
+    <wsdl:part name="category" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getGamesByCategoryHttpGetOut" />
+  <wsdl:message name="getGameHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getGameHttpGetOut" />
+  <wsdl:message name="deleteGameHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteGameHttpGetOut" />
+  <wsdl:message name="createGameHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="console" type="s:string" />
+    <wsdl:part name="company" type="s:string" />
+    <wsdl:part name="reldate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createGameHttpGetOut" />
+  <wsdl:message name="updateGameHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="console" type="s:string" />
+    <wsdl:part name="company" type="s:string" />
+    <wsdl:part name="reldate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateGameHttpGetOut" />
+  <wsdl:message name="getMoviesHttpGetIn" />
+  <wsdl:message name="getMoviesHttpGetOut" />
+  <wsdl:message name="getMoviesByCategoryHttpGetIn">
+    <wsdl:part name="category" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getMoviesByCategoryHttpGetOut" />
+  <wsdl:message name="getMovieHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getMovieHttpGetOut" />
+  <wsdl:message name="deleteMovieHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteMovieHttpGetOut" />
+  <wsdl:message name="createMovieHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="director" type="s:string" />
+    <wsdl:part name="actors" type="s:string" />
+    <wsdl:part name="relyear" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createMovieHttpGetOut" />
+  <wsdl:message name="updateMovieHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="director" type="s:string" />
+    <wsdl:part name="actors" type="s:string" />
+    <wsdl:part name="relyear" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateMovieHttpGetOut" />
+  <wsdl:message name="getClientsHttpGetIn" />
+  <wsdl:message name="getClientsHttpGetOut" />
+  <wsdl:message name="getDeliveriesByOrderIdHttpGetIn">
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveriesByOrderIdHttpGetOut" />
+  <wsdl:message name="createShipmentHttpGetIn">
+    <wsdl:part name="order_id" type="s:string" />
+    <wsdl:part name="address_id" type="s:string" />
+    <wsdl:part name="service_id" type="s:string" />
+    <wsdl:part name="delivery_date" type="s:string" />
+    <wsdl:part name="total_cost" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createShipmentHttpGetOut" />
+  <wsdl:message name="validateClientExistsHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validateClientExistsHttpGetOut" />
+  <wsdl:message name="getClientHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getClientHttpGetOut" />
+  <wsdl:message name="getClientByEmailHttpGetIn">
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getClientByEmailHttpGetOut" />
+  <wsdl:message name="CheckUserNameIsFreeHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserNameIsFreeHttpGetOut" />
+  <wsdl:message name="createClientHttpGetIn">
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="lastname" type="s:string" />
+    <wsdl:part name="bday" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createClientHttpGetOut" />
+  <wsdl:message name="modifyClientHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="lastname" type="s:string" />
+    <wsdl:part name="bday" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="modifyClientHttpGetOut" />
+  <wsdl:message name="deleteClientHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientHttpGetOut" />
+  <wsdl:message name="getOrdersHttpGetIn" />
+  <wsdl:message name="getOrdersHttpGetOut" />
+  <wsdl:message name="deleteAllEntriesFromOrderHttpGetIn">
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEntriesFromOrderHttpGetOut" />
+  <wsdl:message name="getOrdersByClientIdHttpGetIn">
+    <wsdl:part name="clientId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getOrdersByClientIdHttpGetOut" />
+  <wsdl:message name="createNewOrderHttpGetIn">
+    <wsdl:part name="clientId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createNewOrderHttpGetOut" />
+  <wsdl:message name="modifyOrderStatusHttpGetIn">
+    <wsdl:part name="orderId" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="modifyOrderStatusHttpGetOut" />
+  <wsdl:message name="getEntriesHttpGetIn" />
+  <wsdl:message name="getEntriesHttpGetOut" />
+  <wsdl:message name="addEntryToOrderHttpGetIn">
+    <wsdl:part name="orderId" type="s:string" />
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="quantity" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="basket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addEntryToOrderHttpGetOut" />
+  <wsdl:message name="deleteEntryFromOrderHttpGetIn">
+    <wsdl:part name="orderId" type="s:string" />
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteEntryFromOrderHttpGetOut" />
+  <wsdl:message name="deleteEntryHttpGetIn">
+    <wsdl:part name="orderId" type="s:string" />
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteEntryHttpGetOut" />
+  <wsdl:message name="getEntriesByOrderIdHttpGetIn">
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getEntriesByOrderIdHttpGetOut" />
+  <wsdl:message name="getDeliveryAdressHttpGetIn" />
+  <wsdl:message name="getDeliveryAdressHttpGetOut" />
+  <wsdl:message name="getDeliveryAdressesByClientIdHttpGetIn">
+    <wsdl:part name="clientId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveryAdressesByClientIdHttpGetOut" />
+  <wsdl:message name="getDeliveryAdressByIdHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveryAdressByIdHttpGetOut" />
+  <wsdl:message name="getCardsByClientIdHttpGetIn">
+    <wsdl:part name="clientId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCardsByClientIdHttpGetOut" />
+  <wsdl:message name="getCardByIdHttpGetIn">
+    <wsdl:part name="card_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCardByIdHttpGetOut" />
+  <wsdl:message name="modifyClientCardHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="holdername" type="s:string" />
+    <wsdl:part name="expiration" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="modifyClientCardHttpGetOut" />
+  <wsdl:message name="deleteClientCardHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientCardHttpGetOut" />
+  <wsdl:message name="createClientCardHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="client_id" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="card_number" type="s:string" />
+    <wsdl:part name="security_code" type="s:string" />
+    <wsdl:part name="holdername" type="s:string" />
+    <wsdl:part name="expiration" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createClientCardHttpGetOut" />
+  <wsdl:message name="createTemporaryClientCardHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="client_id" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="card_number" type="s:string" />
+    <wsdl:part name="security_code" type="s:string" />
+    <wsdl:part name="holdername" type="s:string" />
+    <wsdl:part name="expiration" type="s:string" />
+    <wsdl:part name="delete_on" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createTemporaryClientCardHttpGetOut" />
+  <wsdl:message name="modifyDeliveryAddressHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="country" type="s:string" />
+    <wsdl:part name="province" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="street" type="s:string" />
+    <wsdl:part name="civicnumber" type="s:string" />
+    <wsdl:part name="appartment" type="s:string" />
+    <wsdl:part name="zipcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="modifyDeliveryAddressHttpGetOut" />
+  <wsdl:message name="createDeliveryAddressHttpGetIn">
+    <wsdl:part name="country" type="s:string" />
+    <wsdl:part name="province" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="street" type="s:string" />
+    <wsdl:part name="civicnumber" type="s:string" />
+    <wsdl:part name="appartment" type="s:string" />
+    <wsdl:part name="zipcode" type="s:string" />
+    <wsdl:part name="client_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createDeliveryAddressHttpGetOut" />
+  <wsdl:message name="deleteDeliveryAddressHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteDeliveryAddressHttpGetOut" />
+  <wsdl:message name="getServicesListHttpGetIn" />
+  <wsdl:message name="getServicesListHttpGetOut" />
+  <wsdl:message name="getServiceByIdHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getServiceByIdHttpGetOut" />
+  <wsdl:message name="getClientTransactionByIdHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getClientTransactionByIdHttpGetOut" />
+  <wsdl:message name="createClientTransactionHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="card_id" type="s:string" />
+    <wsdl:part name="transaction_confirmation" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="validation" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="order_id" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createClientTransactionHttpGetOut" />
+  <wsdl:message name="getStockInsHttpGetIn" />
+  <wsdl:message name="getStockInsHttpGetOut" />
+  <wsdl:message name="getStockInListByPcodeHttpGetIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getStockInListByPcodeHttpGetOut" />
+  <wsdl:message name="getStockOutsHttpGetIn" />
+  <wsdl:message name="getStockOutsHttpGetOut" />
+  <wsdl:message name="newStockOutHttpPostIn">
+    <wsdl:part name="stock_id" type="s:string" />
+    <wsdl:part name="transaction_id" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="quant" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="newStockOutHttpPostOut" />
+  <wsdl:message name="getSalesListHttpPostIn" />
+  <wsdl:message name="getSalesListHttpPostOut" />
+  <wsdl:message name="getProductByPcodeHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getProductByPcodeHttpPostOut" />
+  <wsdl:message name="modifyProductByPcodeHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="quant" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="modifyProductByPcodeHttpPostOut" />
+  <wsdl:message name="getTopTenHttpPostIn" />
+  <wsdl:message name="getTopTenHttpPostOut" />
+  <wsdl:message name="getProductsHttpPostIn" />
+  <wsdl:message name="getProductsHttpPostOut" />
+  <wsdl:message name="getBooksHttpPostIn" />
+  <wsdl:message name="getBooksHttpPostOut" />
+  <wsdl:message name="getBooksByCategoryHttpPostIn">
+    <wsdl:part name="category" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBooksByCategoryHttpPostOut" />
+  <wsdl:message name="getBookHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBookHttpPostOut" />
+  <wsdl:message name="deleteBookHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteBookHttpPostOut" />
+  <wsdl:message name="createBookHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="bookid" type="s:string" />
+    <wsdl:part name="authors" type="s:string" />
+    <wsdl:part name="pubCo" type="s:string" />
+    <wsdl:part name="pubDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createBookHttpPostOut" />
+  <wsdl:message name="updateBookHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="authors" type="s:string" />
+    <wsdl:part name="pubCo" type="s:string" />
+    <wsdl:part name="pubDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateBookHttpPostOut" />
+  <wsdl:message name="getGamesHttpPostIn" />
+  <wsdl:message name="getGamesHttpPostOut" />
+  <wsdl:message name="getGamesByCategoryHttpPostIn">
+    <wsdl:part name="category" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getGamesByCategoryHttpPostOut" />
+  <wsdl:message name="getGameHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getGameHttpPostOut" />
+  <wsdl:message name="deleteGameHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteGameHttpPostOut" />
+  <wsdl:message name="createGameHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="console" type="s:string" />
+    <wsdl:part name="company" type="s:string" />
+    <wsdl:part name="reldate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createGameHttpPostOut" />
+  <wsdl:message name="updateGameHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="console" type="s:string" />
+    <wsdl:part name="company" type="s:string" />
+    <wsdl:part name="reldate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateGameHttpPostOut" />
+  <wsdl:message name="getMoviesHttpPostIn" />
+  <wsdl:message name="getMoviesHttpPostOut" />
+  <wsdl:message name="getMoviesByCategoryHttpPostIn">
+    <wsdl:part name="category" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getMoviesByCategoryHttpPostOut" />
+  <wsdl:message name="getMovieHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getMovieHttpPostOut" />
+  <wsdl:message name="deleteMovieHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteMovieHttpPostOut" />
+  <wsdl:message name="createMovieHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="director" type="s:string" />
+    <wsdl:part name="actors" type="s:string" />
+    <wsdl:part name="relyear" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createMovieHttpPostOut" />
+  <wsdl:message name="updateMovieHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="picture" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="category" type="s:string" />
+    <wsdl:part name="inventory" type="s:string" />
+    <wsdl:part name="genre" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="director" type="s:string" />
+    <wsdl:part name="actors" type="s:string" />
+    <wsdl:part name="relyear" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateMovieHttpPostOut" />
+  <wsdl:message name="getClientsHttpPostIn" />
+  <wsdl:message name="getClientsHttpPostOut" />
+  <wsdl:message name="getDeliveriesByOrderIdHttpPostIn">
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveriesByOrderIdHttpPostOut" />
+  <wsdl:message name="createShipmentHttpPostIn">
+    <wsdl:part name="order_id" type="s:string" />
+    <wsdl:part name="address_id" type="s:string" />
+    <wsdl:part name="service_id" type="s:string" />
+    <wsdl:part name="delivery_date" type="s:string" />
+    <wsdl:part name="total_cost" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createShipmentHttpPostOut" />
+  <wsdl:message name="validateClientExistsHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validateClientExistsHttpPostOut" />
+  <wsdl:message name="getClientHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getClientHttpPostOut" />
+  <wsdl:message name="getClientByEmailHttpPostIn">
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getClientByEmailHttpPostOut" />
+  <wsdl:message name="CheckUserNameIsFreeHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserNameIsFreeHttpPostOut" />
+  <wsdl:message name="createClientHttpPostIn">
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="lastname" type="s:string" />
+    <wsdl:part name="bday" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createClientHttpPostOut" />
+  <wsdl:message name="modifyClientHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="lastname" type="s:string" />
+    <wsdl:part name="bday" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="modifyClientHttpPostOut" />
+  <wsdl:message name="deleteClientHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientHttpPostOut" />
+  <wsdl:message name="getOrdersHttpPostIn" />
+  <wsdl:message name="getOrdersHttpPostOut" />
+  <wsdl:message name="deleteAllEntriesFromOrderHttpPostIn">
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteAllEntriesFromOrderHttpPostOut" />
+  <wsdl:message name="getOrdersByClientIdHttpPostIn">
+    <wsdl:part name="clientId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getOrdersByClientIdHttpPostOut" />
+  <wsdl:message name="createNewOrderHttpPostIn">
+    <wsdl:part name="clientId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createNewOrderHttpPostOut" />
+  <wsdl:message name="modifyOrderStatusHttpPostIn">
+    <wsdl:part name="orderId" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="modifyOrderStatusHttpPostOut" />
+  <wsdl:message name="getEntriesHttpPostIn" />
+  <wsdl:message name="getEntriesHttpPostOut" />
+  <wsdl:message name="addEntryToOrderHttpPostIn">
+    <wsdl:part name="orderId" type="s:string" />
+    <wsdl:part name="pcode" type="s:string" />
+    <wsdl:part name="quantity" type="s:string" />
+    <wsdl:part name="price" type="s:string" />
+    <wsdl:part name="basket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addEntryToOrderHttpPostOut" />
+  <wsdl:message name="deleteEntryFromOrderHttpPostIn">
+    <wsdl:part name="orderId" type="s:string" />
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteEntryFromOrderHttpPostOut" />
+  <wsdl:message name="deleteEntryHttpPostIn">
+    <wsdl:part name="orderId" type="s:string" />
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteEntryHttpPostOut" />
+  <wsdl:message name="getEntriesByOrderIdHttpPostIn">
+    <wsdl:part name="orderId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getEntriesByOrderIdHttpPostOut" />
+  <wsdl:message name="getDeliveryAdressHttpPostIn" />
+  <wsdl:message name="getDeliveryAdressHttpPostOut" />
+  <wsdl:message name="getDeliveryAdressesByClientIdHttpPostIn">
+    <wsdl:part name="clientId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveryAdressesByClientIdHttpPostOut" />
+  <wsdl:message name="getDeliveryAdressByIdHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDeliveryAdressByIdHttpPostOut" />
+  <wsdl:message name="getCardsByClientIdHttpPostIn">
+    <wsdl:part name="clientId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCardsByClientIdHttpPostOut" />
+  <wsdl:message name="getCardByIdHttpPostIn">
+    <wsdl:part name="card_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCardByIdHttpPostOut" />
+  <wsdl:message name="modifyClientCardHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="holdername" type="s:string" />
+    <wsdl:part name="expiration" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="modifyClientCardHttpPostOut" />
+  <wsdl:message name="deleteClientCardHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientCardHttpPostOut" />
+  <wsdl:message name="createClientCardHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="client_id" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="card_number" type="s:string" />
+    <wsdl:part name="security_code" type="s:string" />
+    <wsdl:part name="holdername" type="s:string" />
+    <wsdl:part name="expiration" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createClientCardHttpPostOut" />
+  <wsdl:message name="createTemporaryClientCardHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="client_id" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="card_number" type="s:string" />
+    <wsdl:part name="security_code" type="s:string" />
+    <wsdl:part name="holdername" type="s:string" />
+    <wsdl:part name="expiration" type="s:string" />
+    <wsdl:part name="delete_on" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createTemporaryClientCardHttpPostOut" />
+  <wsdl:message name="modifyDeliveryAddressHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="country" type="s:string" />
+    <wsdl:part name="province" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="street" type="s:string" />
+    <wsdl:part name="civicnumber" type="s:string" />
+    <wsdl:part name="appartment" type="s:string" />
+    <wsdl:part name="zipcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="modifyDeliveryAddressHttpPostOut" />
+  <wsdl:message name="createDeliveryAddressHttpPostIn">
+    <wsdl:part name="country" type="s:string" />
+    <wsdl:part name="province" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="street" type="s:string" />
+    <wsdl:part name="civicnumber" type="s:string" />
+    <wsdl:part name="appartment" type="s:string" />
+    <wsdl:part name="zipcode" type="s:string" />
+    <wsdl:part name="client_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createDeliveryAddressHttpPostOut" />
+  <wsdl:message name="deleteDeliveryAddressHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteDeliveryAddressHttpPostOut" />
+  <wsdl:message name="getServicesListHttpPostIn" />
+  <wsdl:message name="getServicesListHttpPostOut" />
+  <wsdl:message name="getServiceByIdHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getServiceByIdHttpPostOut" />
+  <wsdl:message name="getClientTransactionByIdHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getClientTransactionByIdHttpPostOut" />
+  <wsdl:message name="createClientTransactionHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="card_id" type="s:string" />
+    <wsdl:part name="transaction_confirmation" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="validation" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="order_id" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createClientTransactionHttpPostOut" />
+  <wsdl:message name="getStockInsHttpPostIn" />
+  <wsdl:message name="getStockInsHttpPostOut" />
+  <wsdl:message name="getStockInListByPcodeHttpPostIn">
+    <wsdl:part name="pcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getStockInListByPcodeHttpPostOut" />
+  <wsdl:message name="getStockOutsHttpPostIn" />
+  <wsdl:message name="getStockOutsHttpPostOut" />
+  <wsdl:portType name="BrookeAndCoWebServiceSoap">
+    <wsdl:operation name="newStockOut">
+      <wsdl:input message="tns:newStockOutSoapIn" />
+      <wsdl:output message="tns:newStockOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSalesList">
+      <wsdl:input message="tns:getSalesListSoapIn" />
+      <wsdl:output message="tns:getSalesListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByPcode">
+      <wsdl:input message="tns:getProductByPcodeSoapIn" />
+      <wsdl:output message="tns:getProductByPcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyProductByPcode">
+      <wsdl:input message="tns:modifyProductByPcodeSoapIn" />
+      <wsdl:output message="tns:modifyProductByPcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTopTen">
+      <wsdl:input message="tns:getTopTenSoapIn" />
+      <wsdl:output message="tns:getTopTenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <wsdl:input message="tns:getProductsSoapIn" />
+      <wsdl:output message="tns:getProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBooks">
+      <wsdl:input message="tns:getBooksSoapIn" />
+      <wsdl:output message="tns:getBooksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBooksByCategory">
+      <wsdl:input message="tns:getBooksByCategorySoapIn" />
+      <wsdl:output message="tns:getBooksByCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBook">
+      <wsdl:input message="tns:getBookSoapIn" />
+      <wsdl:output message="tns:getBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBook">
+      <wsdl:input message="tns:deleteBookSoapIn" />
+      <wsdl:output message="tns:deleteBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createBook">
+      <wsdl:input message="tns:createBookSoapIn" />
+      <wsdl:output message="tns:createBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBook">
+      <wsdl:input message="tns:updateBookSoapIn" />
+      <wsdl:output message="tns:updateBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGames">
+      <wsdl:input message="tns:getGamesSoapIn" />
+      <wsdl:output message="tns:getGamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGamesByCategory">
+      <wsdl:input message="tns:getGamesByCategorySoapIn" />
+      <wsdl:output message="tns:getGamesByCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGame">
+      <wsdl:input message="tns:getGameSoapIn" />
+      <wsdl:output message="tns:getGameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteGame">
+      <wsdl:input message="tns:deleteGameSoapIn" />
+      <wsdl:output message="tns:deleteGameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createGame">
+      <wsdl:input message="tns:createGameSoapIn" />
+      <wsdl:output message="tns:createGameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateGame">
+      <wsdl:input message="tns:updateGameSoapIn" />
+      <wsdl:output message="tns:updateGameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMovies">
+      <wsdl:input message="tns:getMoviesSoapIn" />
+      <wsdl:output message="tns:getMoviesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMoviesByCategory">
+      <wsdl:input message="tns:getMoviesByCategorySoapIn" />
+      <wsdl:output message="tns:getMoviesByCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMovie">
+      <wsdl:input message="tns:getMovieSoapIn" />
+      <wsdl:output message="tns:getMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteMovie">
+      <wsdl:input message="tns:deleteMovieSoapIn" />
+      <wsdl:output message="tns:deleteMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createMovie">
+      <wsdl:input message="tns:createMovieSoapIn" />
+      <wsdl:output message="tns:createMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateMovie">
+      <wsdl:input message="tns:updateMovieSoapIn" />
+      <wsdl:output message="tns:updateMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClients">
+      <wsdl:input message="tns:getClientsSoapIn" />
+      <wsdl:output message="tns:getClientsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveriesByOrderId">
+      <wsdl:input message="tns:getDeliveriesByOrderIdSoapIn" />
+      <wsdl:output message="tns:getDeliveriesByOrderIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createShipment">
+      <wsdl:input message="tns:createShipmentSoapIn" />
+      <wsdl:output message="tns:createShipmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validateClientExists">
+      <wsdl:input message="tns:validateClientExistsSoapIn" />
+      <wsdl:output message="tns:validateClientExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <wsdl:input message="tns:getClientSoapIn" />
+      <wsdl:output message="tns:getClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientByEmail">
+      <wsdl:input message="tns:getClientByEmailSoapIn" />
+      <wsdl:output message="tns:getClientByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameIsFree">
+      <wsdl:input message="tns:CheckUserNameIsFreeSoapIn" />
+      <wsdl:output message="tns:CheckUserNameIsFreeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createClient">
+      <wsdl:input message="tns:createClientSoapIn" />
+      <wsdl:output message="tns:createClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyClient">
+      <wsdl:input message="tns:modifyClientSoapIn" />
+      <wsdl:output message="tns:modifyClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <wsdl:input message="tns:deleteClientSoapIn" />
+      <wsdl:output message="tns:deleteClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrders">
+      <wsdl:input message="tns:getOrdersSoapIn" />
+      <wsdl:output message="tns:getOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEntriesFromOrder">
+      <wsdl:input message="tns:deleteAllEntriesFromOrderSoapIn" />
+      <wsdl:output message="tns:deleteAllEntriesFromOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrdersByClientId">
+      <wsdl:input message="tns:getOrdersByClientIdSoapIn" />
+      <wsdl:output message="tns:getOrdersByClientIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createNewOrder">
+      <wsdl:input message="tns:createNewOrderSoapIn" />
+      <wsdl:output message="tns:createNewOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyOrderStatus">
+      <wsdl:input message="tns:modifyOrderStatusSoapIn" />
+      <wsdl:output message="tns:modifyOrderStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEntries">
+      <wsdl:input message="tns:getEntriesSoapIn" />
+      <wsdl:output message="tns:getEntriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addEntryToOrder">
+      <wsdl:input message="tns:addEntryToOrderSoapIn" />
+      <wsdl:output message="tns:addEntryToOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntryFromOrder">
+      <wsdl:input message="tns:deleteEntryFromOrderSoapIn" />
+      <wsdl:output message="tns:deleteEntryFromOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntry">
+      <wsdl:input message="tns:deleteEntrySoapIn" />
+      <wsdl:output message="tns:deleteEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEntriesByOrderId">
+      <wsdl:input message="tns:getEntriesByOrderIdSoapIn" />
+      <wsdl:output message="tns:getEntriesByOrderIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdress">
+      <wsdl:input message="tns:getDeliveryAdressSoapIn" />
+      <wsdl:output message="tns:getDeliveryAdressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressesByClientId">
+      <wsdl:input message="tns:getDeliveryAdressesByClientIdSoapIn" />
+      <wsdl:output message="tns:getDeliveryAdressesByClientIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressById">
+      <wsdl:input message="tns:getDeliveryAdressByIdSoapIn" />
+      <wsdl:output message="tns:getDeliveryAdressByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCardsByClientId">
+      <wsdl:input message="tns:getCardsByClientIdSoapIn" />
+      <wsdl:output message="tns:getCardsByClientIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCardById">
+      <wsdl:input message="tns:getCardByIdSoapIn" />
+      <wsdl:output message="tns:getCardByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyClientCard">
+      <wsdl:input message="tns:modifyClientCardSoapIn" />
+      <wsdl:output message="tns:modifyClientCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClientCard">
+      <wsdl:input message="tns:deleteClientCardSoapIn" />
+      <wsdl:output message="tns:deleteClientCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createClientCard">
+      <wsdl:input message="tns:createClientCardSoapIn" />
+      <wsdl:output message="tns:createClientCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createTemporaryClientCard">
+      <wsdl:input message="tns:createTemporaryClientCardSoapIn" />
+      <wsdl:output message="tns:createTemporaryClientCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyDeliveryAddress">
+      <wsdl:input message="tns:modifyDeliveryAddressSoapIn" />
+      <wsdl:output message="tns:modifyDeliveryAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createDeliveryAddress">
+      <wsdl:input message="tns:createDeliveryAddressSoapIn" />
+      <wsdl:output message="tns:createDeliveryAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDeliveryAddress">
+      <wsdl:input message="tns:deleteDeliveryAddressSoapIn" />
+      <wsdl:output message="tns:deleteDeliveryAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getServicesList">
+      <wsdl:input message="tns:getServicesListSoapIn" />
+      <wsdl:output message="tns:getServicesListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceById">
+      <wsdl:input message="tns:getServiceByIdSoapIn" />
+      <wsdl:output message="tns:getServiceByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientTransactionById">
+      <wsdl:input message="tns:getClientTransactionByIdSoapIn" />
+      <wsdl:output message="tns:getClientTransactionByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createClientTransaction">
+      <wsdl:input message="tns:createClientTransactionSoapIn" />
+      <wsdl:output message="tns:createClientTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStockIns">
+      <wsdl:input message="tns:getStockInsSoapIn" />
+      <wsdl:output message="tns:getStockInsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStockInListByPcode">
+      <wsdl:input message="tns:getStockInListByPcodeSoapIn" />
+      <wsdl:output message="tns:getStockInListByPcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStockOuts">
+      <wsdl:input message="tns:getStockOutsSoapIn" />
+      <wsdl:output message="tns:getStockOutsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BrookeAndCoWebServiceHttpGet">
+    <wsdl:operation name="newStockOut">
+      <wsdl:input message="tns:newStockOutHttpGetIn" />
+      <wsdl:output message="tns:newStockOutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSalesList">
+      <wsdl:input message="tns:getSalesListHttpGetIn" />
+      <wsdl:output message="tns:getSalesListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByPcode">
+      <wsdl:input message="tns:getProductByPcodeHttpGetIn" />
+      <wsdl:output message="tns:getProductByPcodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyProductByPcode">
+      <wsdl:input message="tns:modifyProductByPcodeHttpGetIn" />
+      <wsdl:output message="tns:modifyProductByPcodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTopTen">
+      <wsdl:input message="tns:getTopTenHttpGetIn" />
+      <wsdl:output message="tns:getTopTenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <wsdl:input message="tns:getProductsHttpGetIn" />
+      <wsdl:output message="tns:getProductsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBooks">
+      <wsdl:input message="tns:getBooksHttpGetIn" />
+      <wsdl:output message="tns:getBooksHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBooksByCategory">
+      <wsdl:input message="tns:getBooksByCategoryHttpGetIn" />
+      <wsdl:output message="tns:getBooksByCategoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBook">
+      <wsdl:input message="tns:getBookHttpGetIn" />
+      <wsdl:output message="tns:getBookHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBook">
+      <wsdl:input message="tns:deleteBookHttpGetIn" />
+      <wsdl:output message="tns:deleteBookHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createBook">
+      <wsdl:input message="tns:createBookHttpGetIn" />
+      <wsdl:output message="tns:createBookHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBook">
+      <wsdl:input message="tns:updateBookHttpGetIn" />
+      <wsdl:output message="tns:updateBookHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGames">
+      <wsdl:input message="tns:getGamesHttpGetIn" />
+      <wsdl:output message="tns:getGamesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGamesByCategory">
+      <wsdl:input message="tns:getGamesByCategoryHttpGetIn" />
+      <wsdl:output message="tns:getGamesByCategoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGame">
+      <wsdl:input message="tns:getGameHttpGetIn" />
+      <wsdl:output message="tns:getGameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteGame">
+      <wsdl:input message="tns:deleteGameHttpGetIn" />
+      <wsdl:output message="tns:deleteGameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createGame">
+      <wsdl:input message="tns:createGameHttpGetIn" />
+      <wsdl:output message="tns:createGameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateGame">
+      <wsdl:input message="tns:updateGameHttpGetIn" />
+      <wsdl:output message="tns:updateGameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMovies">
+      <wsdl:input message="tns:getMoviesHttpGetIn" />
+      <wsdl:output message="tns:getMoviesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMoviesByCategory">
+      <wsdl:input message="tns:getMoviesByCategoryHttpGetIn" />
+      <wsdl:output message="tns:getMoviesByCategoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMovie">
+      <wsdl:input message="tns:getMovieHttpGetIn" />
+      <wsdl:output message="tns:getMovieHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteMovie">
+      <wsdl:input message="tns:deleteMovieHttpGetIn" />
+      <wsdl:output message="tns:deleteMovieHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createMovie">
+      <wsdl:input message="tns:createMovieHttpGetIn" />
+      <wsdl:output message="tns:createMovieHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateMovie">
+      <wsdl:input message="tns:updateMovieHttpGetIn" />
+      <wsdl:output message="tns:updateMovieHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClients">
+      <wsdl:input message="tns:getClientsHttpGetIn" />
+      <wsdl:output message="tns:getClientsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveriesByOrderId">
+      <wsdl:input message="tns:getDeliveriesByOrderIdHttpGetIn" />
+      <wsdl:output message="tns:getDeliveriesByOrderIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createShipment">
+      <wsdl:input message="tns:createShipmentHttpGetIn" />
+      <wsdl:output message="tns:createShipmentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validateClientExists">
+      <wsdl:input message="tns:validateClientExistsHttpGetIn" />
+      <wsdl:output message="tns:validateClientExistsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <wsdl:input message="tns:getClientHttpGetIn" />
+      <wsdl:output message="tns:getClientHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientByEmail">
+      <wsdl:input message="tns:getClientByEmailHttpGetIn" />
+      <wsdl:output message="tns:getClientByEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameIsFree">
+      <wsdl:input message="tns:CheckUserNameIsFreeHttpGetIn" />
+      <wsdl:output message="tns:CheckUserNameIsFreeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createClient">
+      <wsdl:input message="tns:createClientHttpGetIn" />
+      <wsdl:output message="tns:createClientHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyClient">
+      <wsdl:input message="tns:modifyClientHttpGetIn" />
+      <wsdl:output message="tns:modifyClientHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <wsdl:input message="tns:deleteClientHttpGetIn" />
+      <wsdl:output message="tns:deleteClientHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrders">
+      <wsdl:input message="tns:getOrdersHttpGetIn" />
+      <wsdl:output message="tns:getOrdersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEntriesFromOrder">
+      <wsdl:input message="tns:deleteAllEntriesFromOrderHttpGetIn" />
+      <wsdl:output message="tns:deleteAllEntriesFromOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrdersByClientId">
+      <wsdl:input message="tns:getOrdersByClientIdHttpGetIn" />
+      <wsdl:output message="tns:getOrdersByClientIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createNewOrder">
+      <wsdl:input message="tns:createNewOrderHttpGetIn" />
+      <wsdl:output message="tns:createNewOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyOrderStatus">
+      <wsdl:input message="tns:modifyOrderStatusHttpGetIn" />
+      <wsdl:output message="tns:modifyOrderStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEntries">
+      <wsdl:input message="tns:getEntriesHttpGetIn" />
+      <wsdl:output message="tns:getEntriesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addEntryToOrder">
+      <wsdl:input message="tns:addEntryToOrderHttpGetIn" />
+      <wsdl:output message="tns:addEntryToOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntryFromOrder">
+      <wsdl:input message="tns:deleteEntryFromOrderHttpGetIn" />
+      <wsdl:output message="tns:deleteEntryFromOrderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntry">
+      <wsdl:input message="tns:deleteEntryHttpGetIn" />
+      <wsdl:output message="tns:deleteEntryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEntriesByOrderId">
+      <wsdl:input message="tns:getEntriesByOrderIdHttpGetIn" />
+      <wsdl:output message="tns:getEntriesByOrderIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdress">
+      <wsdl:input message="tns:getDeliveryAdressHttpGetIn" />
+      <wsdl:output message="tns:getDeliveryAdressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressesByClientId">
+      <wsdl:input message="tns:getDeliveryAdressesByClientIdHttpGetIn" />
+      <wsdl:output message="tns:getDeliveryAdressesByClientIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressById">
+      <wsdl:input message="tns:getDeliveryAdressByIdHttpGetIn" />
+      <wsdl:output message="tns:getDeliveryAdressByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCardsByClientId">
+      <wsdl:input message="tns:getCardsByClientIdHttpGetIn" />
+      <wsdl:output message="tns:getCardsByClientIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCardById">
+      <wsdl:input message="tns:getCardByIdHttpGetIn" />
+      <wsdl:output message="tns:getCardByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyClientCard">
+      <wsdl:input message="tns:modifyClientCardHttpGetIn" />
+      <wsdl:output message="tns:modifyClientCardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClientCard">
+      <wsdl:input message="tns:deleteClientCardHttpGetIn" />
+      <wsdl:output message="tns:deleteClientCardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createClientCard">
+      <wsdl:input message="tns:createClientCardHttpGetIn" />
+      <wsdl:output message="tns:createClientCardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createTemporaryClientCard">
+      <wsdl:input message="tns:createTemporaryClientCardHttpGetIn" />
+      <wsdl:output message="tns:createTemporaryClientCardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyDeliveryAddress">
+      <wsdl:input message="tns:modifyDeliveryAddressHttpGetIn" />
+      <wsdl:output message="tns:modifyDeliveryAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createDeliveryAddress">
+      <wsdl:input message="tns:createDeliveryAddressHttpGetIn" />
+      <wsdl:output message="tns:createDeliveryAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDeliveryAddress">
+      <wsdl:input message="tns:deleteDeliveryAddressHttpGetIn" />
+      <wsdl:output message="tns:deleteDeliveryAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getServicesList">
+      <wsdl:input message="tns:getServicesListHttpGetIn" />
+      <wsdl:output message="tns:getServicesListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceById">
+      <wsdl:input message="tns:getServiceByIdHttpGetIn" />
+      <wsdl:output message="tns:getServiceByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientTransactionById">
+      <wsdl:input message="tns:getClientTransactionByIdHttpGetIn" />
+      <wsdl:output message="tns:getClientTransactionByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createClientTransaction">
+      <wsdl:input message="tns:createClientTransactionHttpGetIn" />
+      <wsdl:output message="tns:createClientTransactionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStockIns">
+      <wsdl:input message="tns:getStockInsHttpGetIn" />
+      <wsdl:output message="tns:getStockInsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStockInListByPcode">
+      <wsdl:input message="tns:getStockInListByPcodeHttpGetIn" />
+      <wsdl:output message="tns:getStockInListByPcodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStockOuts">
+      <wsdl:input message="tns:getStockOutsHttpGetIn" />
+      <wsdl:output message="tns:getStockOutsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BrookeAndCoWebServiceHttpPost">
+    <wsdl:operation name="newStockOut">
+      <wsdl:input message="tns:newStockOutHttpPostIn" />
+      <wsdl:output message="tns:newStockOutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSalesList">
+      <wsdl:input message="tns:getSalesListHttpPostIn" />
+      <wsdl:output message="tns:getSalesListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByPcode">
+      <wsdl:input message="tns:getProductByPcodeHttpPostIn" />
+      <wsdl:output message="tns:getProductByPcodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyProductByPcode">
+      <wsdl:input message="tns:modifyProductByPcodeHttpPostIn" />
+      <wsdl:output message="tns:modifyProductByPcodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTopTen">
+      <wsdl:input message="tns:getTopTenHttpPostIn" />
+      <wsdl:output message="tns:getTopTenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <wsdl:input message="tns:getProductsHttpPostIn" />
+      <wsdl:output message="tns:getProductsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBooks">
+      <wsdl:input message="tns:getBooksHttpPostIn" />
+      <wsdl:output message="tns:getBooksHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBooksByCategory">
+      <wsdl:input message="tns:getBooksByCategoryHttpPostIn" />
+      <wsdl:output message="tns:getBooksByCategoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBook">
+      <wsdl:input message="tns:getBookHttpPostIn" />
+      <wsdl:output message="tns:getBookHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBook">
+      <wsdl:input message="tns:deleteBookHttpPostIn" />
+      <wsdl:output message="tns:deleteBookHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createBook">
+      <wsdl:input message="tns:createBookHttpPostIn" />
+      <wsdl:output message="tns:createBookHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBook">
+      <wsdl:input message="tns:updateBookHttpPostIn" />
+      <wsdl:output message="tns:updateBookHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGames">
+      <wsdl:input message="tns:getGamesHttpPostIn" />
+      <wsdl:output message="tns:getGamesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGamesByCategory">
+      <wsdl:input message="tns:getGamesByCategoryHttpPostIn" />
+      <wsdl:output message="tns:getGamesByCategoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGame">
+      <wsdl:input message="tns:getGameHttpPostIn" />
+      <wsdl:output message="tns:getGameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteGame">
+      <wsdl:input message="tns:deleteGameHttpPostIn" />
+      <wsdl:output message="tns:deleteGameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createGame">
+      <wsdl:input message="tns:createGameHttpPostIn" />
+      <wsdl:output message="tns:createGameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateGame">
+      <wsdl:input message="tns:updateGameHttpPostIn" />
+      <wsdl:output message="tns:updateGameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMovies">
+      <wsdl:input message="tns:getMoviesHttpPostIn" />
+      <wsdl:output message="tns:getMoviesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMoviesByCategory">
+      <wsdl:input message="tns:getMoviesByCategoryHttpPostIn" />
+      <wsdl:output message="tns:getMoviesByCategoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMovie">
+      <wsdl:input message="tns:getMovieHttpPostIn" />
+      <wsdl:output message="tns:getMovieHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteMovie">
+      <wsdl:input message="tns:deleteMovieHttpPostIn" />
+      <wsdl:output message="tns:deleteMovieHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createMovie">
+      <wsdl:input message="tns:createMovieHttpPostIn" />
+      <wsdl:output message="tns:createMovieHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateMovie">
+      <wsdl:input message="tns:updateMovieHttpPostIn" />
+      <wsdl:output message="tns:updateMovieHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClients">
+      <wsdl:input message="tns:getClientsHttpPostIn" />
+      <wsdl:output message="tns:getClientsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveriesByOrderId">
+      <wsdl:input message="tns:getDeliveriesByOrderIdHttpPostIn" />
+      <wsdl:output message="tns:getDeliveriesByOrderIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createShipment">
+      <wsdl:input message="tns:createShipmentHttpPostIn" />
+      <wsdl:output message="tns:createShipmentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validateClientExists">
+      <wsdl:input message="tns:validateClientExistsHttpPostIn" />
+      <wsdl:output message="tns:validateClientExistsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <wsdl:input message="tns:getClientHttpPostIn" />
+      <wsdl:output message="tns:getClientHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientByEmail">
+      <wsdl:input message="tns:getClientByEmailHttpPostIn" />
+      <wsdl:output message="tns:getClientByEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameIsFree">
+      <wsdl:input message="tns:CheckUserNameIsFreeHttpPostIn" />
+      <wsdl:output message="tns:CheckUserNameIsFreeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createClient">
+      <wsdl:input message="tns:createClientHttpPostIn" />
+      <wsdl:output message="tns:createClientHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyClient">
+      <wsdl:input message="tns:modifyClientHttpPostIn" />
+      <wsdl:output message="tns:modifyClientHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <wsdl:input message="tns:deleteClientHttpPostIn" />
+      <wsdl:output message="tns:deleteClientHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrders">
+      <wsdl:input message="tns:getOrdersHttpPostIn" />
+      <wsdl:output message="tns:getOrdersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEntriesFromOrder">
+      <wsdl:input message="tns:deleteAllEntriesFromOrderHttpPostIn" />
+      <wsdl:output message="tns:deleteAllEntriesFromOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrdersByClientId">
+      <wsdl:input message="tns:getOrdersByClientIdHttpPostIn" />
+      <wsdl:output message="tns:getOrdersByClientIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createNewOrder">
+      <wsdl:input message="tns:createNewOrderHttpPostIn" />
+      <wsdl:output message="tns:createNewOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyOrderStatus">
+      <wsdl:input message="tns:modifyOrderStatusHttpPostIn" />
+      <wsdl:output message="tns:modifyOrderStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEntries">
+      <wsdl:input message="tns:getEntriesHttpPostIn" />
+      <wsdl:output message="tns:getEntriesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addEntryToOrder">
+      <wsdl:input message="tns:addEntryToOrderHttpPostIn" />
+      <wsdl:output message="tns:addEntryToOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntryFromOrder">
+      <wsdl:input message="tns:deleteEntryFromOrderHttpPostIn" />
+      <wsdl:output message="tns:deleteEntryFromOrderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntry">
+      <wsdl:input message="tns:deleteEntryHttpPostIn" />
+      <wsdl:output message="tns:deleteEntryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEntriesByOrderId">
+      <wsdl:input message="tns:getEntriesByOrderIdHttpPostIn" />
+      <wsdl:output message="tns:getEntriesByOrderIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdress">
+      <wsdl:input message="tns:getDeliveryAdressHttpPostIn" />
+      <wsdl:output message="tns:getDeliveryAdressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressesByClientId">
+      <wsdl:input message="tns:getDeliveryAdressesByClientIdHttpPostIn" />
+      <wsdl:output message="tns:getDeliveryAdressesByClientIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressById">
+      <wsdl:input message="tns:getDeliveryAdressByIdHttpPostIn" />
+      <wsdl:output message="tns:getDeliveryAdressByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCardsByClientId">
+      <wsdl:input message="tns:getCardsByClientIdHttpPostIn" />
+      <wsdl:output message="tns:getCardsByClientIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCardById">
+      <wsdl:input message="tns:getCardByIdHttpPostIn" />
+      <wsdl:output message="tns:getCardByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyClientCard">
+      <wsdl:input message="tns:modifyClientCardHttpPostIn" />
+      <wsdl:output message="tns:modifyClientCardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClientCard">
+      <wsdl:input message="tns:deleteClientCardHttpPostIn" />
+      <wsdl:output message="tns:deleteClientCardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createClientCard">
+      <wsdl:input message="tns:createClientCardHttpPostIn" />
+      <wsdl:output message="tns:createClientCardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createTemporaryClientCard">
+      <wsdl:input message="tns:createTemporaryClientCardHttpPostIn" />
+      <wsdl:output message="tns:createTemporaryClientCardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyDeliveryAddress">
+      <wsdl:input message="tns:modifyDeliveryAddressHttpPostIn" />
+      <wsdl:output message="tns:modifyDeliveryAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createDeliveryAddress">
+      <wsdl:input message="tns:createDeliveryAddressHttpPostIn" />
+      <wsdl:output message="tns:createDeliveryAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDeliveryAddress">
+      <wsdl:input message="tns:deleteDeliveryAddressHttpPostIn" />
+      <wsdl:output message="tns:deleteDeliveryAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getServicesList">
+      <wsdl:input message="tns:getServicesListHttpPostIn" />
+      <wsdl:output message="tns:getServicesListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceById">
+      <wsdl:input message="tns:getServiceByIdHttpPostIn" />
+      <wsdl:output message="tns:getServiceByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientTransactionById">
+      <wsdl:input message="tns:getClientTransactionByIdHttpPostIn" />
+      <wsdl:output message="tns:getClientTransactionByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createClientTransaction">
+      <wsdl:input message="tns:createClientTransactionHttpPostIn" />
+      <wsdl:output message="tns:createClientTransactionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStockIns">
+      <wsdl:input message="tns:getStockInsHttpPostIn" />
+      <wsdl:output message="tns:getStockInsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStockInListByPcode">
+      <wsdl:input message="tns:getStockInListByPcodeHttpPostIn" />
+      <wsdl:output message="tns:getStockInListByPcodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStockOuts">
+      <wsdl:input message="tns:getStockOutsHttpPostIn" />
+      <wsdl:output message="tns:getStockOutsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BrookeAndCoWebServiceSoap" type="tns:BrookeAndCoWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="newStockOut">
+      <soap:operation soapAction="http://tempuri.org/newStockOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesList">
+      <soap:operation soapAction="http://tempuri.org/getSalesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductByPcode">
+      <soap:operation soapAction="http://tempuri.org/getProductByPcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyProductByPcode">
+      <soap:operation soapAction="http://tempuri.org/modifyProductByPcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTopTen">
+      <soap:operation soapAction="http://tempuri.org/getTopTen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <soap:operation soapAction="http://tempuri.org/getProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBooks">
+      <soap:operation soapAction="http://tempuri.org/getBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBooksByCategory">
+      <soap:operation soapAction="http://tempuri.org/getBooksByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBook">
+      <soap:operation soapAction="http://tempuri.org/getBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBook">
+      <soap:operation soapAction="http://tempuri.org/deleteBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createBook">
+      <soap:operation soapAction="http://tempuri.org/createBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBook">
+      <soap:operation soapAction="http://tempuri.org/updateBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGames">
+      <soap:operation soapAction="http://tempuri.org/getGames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGamesByCategory">
+      <soap:operation soapAction="http://tempuri.org/getGamesByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGame">
+      <soap:operation soapAction="http://tempuri.org/getGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGame">
+      <soap:operation soapAction="http://tempuri.org/deleteGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGame">
+      <soap:operation soapAction="http://tempuri.org/createGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateGame">
+      <soap:operation soapAction="http://tempuri.org/updateGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMovies">
+      <soap:operation soapAction="http://tempuri.org/getMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMoviesByCategory">
+      <soap:operation soapAction="http://tempuri.org/getMoviesByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMovie">
+      <soap:operation soapAction="http://tempuri.org/getMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMovie">
+      <soap:operation soapAction="http://tempuri.org/deleteMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createMovie">
+      <soap:operation soapAction="http://tempuri.org/createMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMovie">
+      <soap:operation soapAction="http://tempuri.org/updateMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClients">
+      <soap:operation soapAction="http://tempuri.org/getClients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveriesByOrderId">
+      <soap:operation soapAction="http://tempuri.org/getDeliveriesByOrderId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createShipment">
+      <soap:operation soapAction="http://tempuri.org/createShipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateClientExists">
+      <soap:operation soapAction="http://tempuri.org/validateClientExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <soap:operation soapAction="http://tempuri.org/getClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientByEmail">
+      <soap:operation soapAction="http://tempuri.org/getClientByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameIsFree">
+      <soap:operation soapAction="http://tempuri.org/CheckUserNameIsFree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createClient">
+      <soap:operation soapAction="http://tempuri.org/createClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyClient">
+      <soap:operation soapAction="http://tempuri.org/modifyClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <soap:operation soapAction="http://tempuri.org/deleteClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrders">
+      <soap:operation soapAction="http://tempuri.org/getOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEntriesFromOrder">
+      <soap:operation soapAction="http://tempuri.org/deleteAllEntriesFromOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrdersByClientId">
+      <soap:operation soapAction="http://tempuri.org/getOrdersByClientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createNewOrder">
+      <soap:operation soapAction="http://tempuri.org/createNewOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyOrderStatus">
+      <soap:operation soapAction="http://tempuri.org/modifyOrderStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntries">
+      <soap:operation soapAction="http://tempuri.org/getEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addEntryToOrder">
+      <soap:operation soapAction="http://tempuri.org/addEntryToOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntryFromOrder">
+      <soap:operation soapAction="http://tempuri.org/deleteEntryFromOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntry">
+      <soap:operation soapAction="http://tempuri.org/deleteEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntriesByOrderId">
+      <soap:operation soapAction="http://tempuri.org/getEntriesByOrderId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdress">
+      <soap:operation soapAction="http://tempuri.org/getDeliveryAdress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressesByClientId">
+      <soap:operation soapAction="http://tempuri.org/getDeliveryAdressesByClientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressById">
+      <soap:operation soapAction="http://tempuri.org/getDeliveryAdressById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardsByClientId">
+      <soap:operation soapAction="http://tempuri.org/getCardsByClientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardById">
+      <soap:operation soapAction="http://tempuri.org/getCardById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyClientCard">
+      <soap:operation soapAction="http://tempuri.org/modifyClientCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteClientCard">
+      <soap:operation soapAction="http://tempuri.org/deleteClientCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createClientCard">
+      <soap:operation soapAction="http://tempuri.org/createClientCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createTemporaryClientCard">
+      <soap:operation soapAction="http://tempuri.org/createTemporaryClientCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyDeliveryAddress">
+      <soap:operation soapAction="http://tempuri.org/modifyDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createDeliveryAddress">
+      <soap:operation soapAction="http://tempuri.org/createDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDeliveryAddress">
+      <soap:operation soapAction="http://tempuri.org/deleteDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServicesList">
+      <soap:operation soapAction="http://tempuri.org/getServicesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceById">
+      <soap:operation soapAction="http://tempuri.org/getServiceById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientTransactionById">
+      <soap:operation soapAction="http://tempuri.org/getClientTransactionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createClientTransaction">
+      <soap:operation soapAction="http://tempuri.org/createClientTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStockIns">
+      <soap:operation soapAction="http://tempuri.org/getStockIns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStockInListByPcode">
+      <soap:operation soapAction="http://tempuri.org/getStockInListByPcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStockOuts">
+      <soap:operation soapAction="http://tempuri.org/getStockOuts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BrookeAndCoWebServiceSoap12" type="tns:BrookeAndCoWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="newStockOut">
+      <soap12:operation soapAction="http://tempuri.org/newStockOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalesList">
+      <soap12:operation soapAction="http://tempuri.org/getSalesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductByPcode">
+      <soap12:operation soapAction="http://tempuri.org/getProductByPcode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyProductByPcode">
+      <soap12:operation soapAction="http://tempuri.org/modifyProductByPcode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTopTen">
+      <soap12:operation soapAction="http://tempuri.org/getTopTen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <soap12:operation soapAction="http://tempuri.org/getProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBooks">
+      <soap12:operation soapAction="http://tempuri.org/getBooks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBooksByCategory">
+      <soap12:operation soapAction="http://tempuri.org/getBooksByCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBook">
+      <soap12:operation soapAction="http://tempuri.org/getBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBook">
+      <soap12:operation soapAction="http://tempuri.org/deleteBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createBook">
+      <soap12:operation soapAction="http://tempuri.org/createBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBook">
+      <soap12:operation soapAction="http://tempuri.org/updateBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGames">
+      <soap12:operation soapAction="http://tempuri.org/getGames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGamesByCategory">
+      <soap12:operation soapAction="http://tempuri.org/getGamesByCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGame">
+      <soap12:operation soapAction="http://tempuri.org/getGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGame">
+      <soap12:operation soapAction="http://tempuri.org/deleteGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGame">
+      <soap12:operation soapAction="http://tempuri.org/createGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateGame">
+      <soap12:operation soapAction="http://tempuri.org/updateGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMovies">
+      <soap12:operation soapAction="http://tempuri.org/getMovies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMoviesByCategory">
+      <soap12:operation soapAction="http://tempuri.org/getMoviesByCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMovie">
+      <soap12:operation soapAction="http://tempuri.org/getMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMovie">
+      <soap12:operation soapAction="http://tempuri.org/deleteMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createMovie">
+      <soap12:operation soapAction="http://tempuri.org/createMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMovie">
+      <soap12:operation soapAction="http://tempuri.org/updateMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClients">
+      <soap12:operation soapAction="http://tempuri.org/getClients" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveriesByOrderId">
+      <soap12:operation soapAction="http://tempuri.org/getDeliveriesByOrderId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createShipment">
+      <soap12:operation soapAction="http://tempuri.org/createShipment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateClientExists">
+      <soap12:operation soapAction="http://tempuri.org/validateClientExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <soap12:operation soapAction="http://tempuri.org/getClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientByEmail">
+      <soap12:operation soapAction="http://tempuri.org/getClientByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameIsFree">
+      <soap12:operation soapAction="http://tempuri.org/CheckUserNameIsFree" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createClient">
+      <soap12:operation soapAction="http://tempuri.org/createClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyClient">
+      <soap12:operation soapAction="http://tempuri.org/modifyClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <soap12:operation soapAction="http://tempuri.org/deleteClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrders">
+      <soap12:operation soapAction="http://tempuri.org/getOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEntriesFromOrder">
+      <soap12:operation soapAction="http://tempuri.org/deleteAllEntriesFromOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrdersByClientId">
+      <soap12:operation soapAction="http://tempuri.org/getOrdersByClientId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createNewOrder">
+      <soap12:operation soapAction="http://tempuri.org/createNewOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyOrderStatus">
+      <soap12:operation soapAction="http://tempuri.org/modifyOrderStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntries">
+      <soap12:operation soapAction="http://tempuri.org/getEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addEntryToOrder">
+      <soap12:operation soapAction="http://tempuri.org/addEntryToOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntryFromOrder">
+      <soap12:operation soapAction="http://tempuri.org/deleteEntryFromOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntry">
+      <soap12:operation soapAction="http://tempuri.org/deleteEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntriesByOrderId">
+      <soap12:operation soapAction="http://tempuri.org/getEntriesByOrderId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdress">
+      <soap12:operation soapAction="http://tempuri.org/getDeliveryAdress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressesByClientId">
+      <soap12:operation soapAction="http://tempuri.org/getDeliveryAdressesByClientId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressById">
+      <soap12:operation soapAction="http://tempuri.org/getDeliveryAdressById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardsByClientId">
+      <soap12:operation soapAction="http://tempuri.org/getCardsByClientId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCardById">
+      <soap12:operation soapAction="http://tempuri.org/getCardById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyClientCard">
+      <soap12:operation soapAction="http://tempuri.org/modifyClientCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteClientCard">
+      <soap12:operation soapAction="http://tempuri.org/deleteClientCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createClientCard">
+      <soap12:operation soapAction="http://tempuri.org/createClientCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createTemporaryClientCard">
+      <soap12:operation soapAction="http://tempuri.org/createTemporaryClientCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyDeliveryAddress">
+      <soap12:operation soapAction="http://tempuri.org/modifyDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createDeliveryAddress">
+      <soap12:operation soapAction="http://tempuri.org/createDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDeliveryAddress">
+      <soap12:operation soapAction="http://tempuri.org/deleteDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServicesList">
+      <soap12:operation soapAction="http://tempuri.org/getServicesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceById">
+      <soap12:operation soapAction="http://tempuri.org/getServiceById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientTransactionById">
+      <soap12:operation soapAction="http://tempuri.org/getClientTransactionById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createClientTransaction">
+      <soap12:operation soapAction="http://tempuri.org/createClientTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStockIns">
+      <soap12:operation soapAction="http://tempuri.org/getStockIns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStockInListByPcode">
+      <soap12:operation soapAction="http://tempuri.org/getStockInListByPcode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStockOuts">
+      <soap12:operation soapAction="http://tempuri.org/getStockOuts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BrookeAndCoWebServiceHttpGet" type="tns:BrookeAndCoWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="newStockOut">
+      <http:operation location="/newStockOut" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getSalesList">
+      <http:operation location="/getSalesList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByPcode">
+      <http:operation location="/getProductByPcode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="modifyProductByPcode">
+      <http:operation location="/modifyProductByPcode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getTopTen">
+      <http:operation location="/getTopTen" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <http:operation location="/getProducts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getBooks">
+      <http:operation location="/getBooks" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getBooksByCategory">
+      <http:operation location="/getBooksByCategory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getBook">
+      <http:operation location="/getBook" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBook">
+      <http:operation location="/deleteBook" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createBook">
+      <http:operation location="/createBook" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="updateBook">
+      <http:operation location="/updateBook" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getGames">
+      <http:operation location="/getGames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getGamesByCategory">
+      <http:operation location="/getGamesByCategory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getGame">
+      <http:operation location="/getGame" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteGame">
+      <http:operation location="/deleteGame" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createGame">
+      <http:operation location="/createGame" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="updateGame">
+      <http:operation location="/updateGame" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getMovies">
+      <http:operation location="/getMovies" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getMoviesByCategory">
+      <http:operation location="/getMoviesByCategory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getMovie">
+      <http:operation location="/getMovie" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteMovie">
+      <http:operation location="/deleteMovie" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createMovie">
+      <http:operation location="/createMovie" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="updateMovie">
+      <http:operation location="/updateMovie" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getClients">
+      <http:operation location="/getClients" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveriesByOrderId">
+      <http:operation location="/getDeliveriesByOrderId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createShipment">
+      <http:operation location="/createShipment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="validateClientExists">
+      <http:operation location="/validateClientExists" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <http:operation location="/getClient" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getClientByEmail">
+      <http:operation location="/getClientByEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameIsFree">
+      <http:operation location="/CheckUserNameIsFree" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createClient">
+      <http:operation location="/createClient" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="modifyClient">
+      <http:operation location="/modifyClient" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <http:operation location="/deleteClient" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getOrders">
+      <http:operation location="/getOrders" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEntriesFromOrder">
+      <http:operation location="/deleteAllEntriesFromOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getOrdersByClientId">
+      <http:operation location="/getOrdersByClientId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createNewOrder">
+      <http:operation location="/createNewOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="modifyOrderStatus">
+      <http:operation location="/modifyOrderStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getEntries">
+      <http:operation location="/getEntries" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="addEntryToOrder">
+      <http:operation location="/addEntryToOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntryFromOrder">
+      <http:operation location="/deleteEntryFromOrder" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntry">
+      <http:operation location="/deleteEntry" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getEntriesByOrderId">
+      <http:operation location="/getEntriesByOrderId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdress">
+      <http:operation location="/getDeliveryAdress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressesByClientId">
+      <http:operation location="/getDeliveryAdressesByClientId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressById">
+      <http:operation location="/getDeliveryAdressById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getCardsByClientId">
+      <http:operation location="/getCardsByClientId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getCardById">
+      <http:operation location="/getCardById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="modifyClientCard">
+      <http:operation location="/modifyClientCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClientCard">
+      <http:operation location="/deleteClientCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createClientCard">
+      <http:operation location="/createClientCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createTemporaryClientCard">
+      <http:operation location="/createTemporaryClientCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="modifyDeliveryAddress">
+      <http:operation location="/modifyDeliveryAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createDeliveryAddress">
+      <http:operation location="/createDeliveryAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDeliveryAddress">
+      <http:operation location="/deleteDeliveryAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getServicesList">
+      <http:operation location="/getServicesList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceById">
+      <http:operation location="/getServiceById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getClientTransactionById">
+      <http:operation location="/getClientTransactionById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createClientTransaction">
+      <http:operation location="/createClientTransaction" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getStockIns">
+      <http:operation location="/getStockIns" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getStockInListByPcode">
+      <http:operation location="/getStockInListByPcode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getStockOuts">
+      <http:operation location="/getStockOuts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BrookeAndCoWebServiceHttpPost" type="tns:BrookeAndCoWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="newStockOut">
+      <http:operation location="/newStockOut" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getSalesList">
+      <http:operation location="/getSalesList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByPcode">
+      <http:operation location="/getProductByPcode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="modifyProductByPcode">
+      <http:operation location="/modifyProductByPcode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getTopTen">
+      <http:operation location="/getTopTen" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <http:operation location="/getProducts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getBooks">
+      <http:operation location="/getBooks" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getBooksByCategory">
+      <http:operation location="/getBooksByCategory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getBook">
+      <http:operation location="/getBook" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBook">
+      <http:operation location="/deleteBook" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createBook">
+      <http:operation location="/createBook" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="updateBook">
+      <http:operation location="/updateBook" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getGames">
+      <http:operation location="/getGames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getGamesByCategory">
+      <http:operation location="/getGamesByCategory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getGame">
+      <http:operation location="/getGame" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteGame">
+      <http:operation location="/deleteGame" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createGame">
+      <http:operation location="/createGame" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="updateGame">
+      <http:operation location="/updateGame" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getMovies">
+      <http:operation location="/getMovies" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getMoviesByCategory">
+      <http:operation location="/getMoviesByCategory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getMovie">
+      <http:operation location="/getMovie" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteMovie">
+      <http:operation location="/deleteMovie" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createMovie">
+      <http:operation location="/createMovie" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="updateMovie">
+      <http:operation location="/updateMovie" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getClients">
+      <http:operation location="/getClients" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveriesByOrderId">
+      <http:operation location="/getDeliveriesByOrderId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createShipment">
+      <http:operation location="/createShipment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="validateClientExists">
+      <http:operation location="/validateClientExists" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <http:operation location="/getClient" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getClientByEmail">
+      <http:operation location="/getClientByEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameIsFree">
+      <http:operation location="/CheckUserNameIsFree" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createClient">
+      <http:operation location="/createClient" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="modifyClient">
+      <http:operation location="/modifyClient" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <http:operation location="/deleteClient" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getOrders">
+      <http:operation location="/getOrders" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAllEntriesFromOrder">
+      <http:operation location="/deleteAllEntriesFromOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getOrdersByClientId">
+      <http:operation location="/getOrdersByClientId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createNewOrder">
+      <http:operation location="/createNewOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="modifyOrderStatus">
+      <http:operation location="/modifyOrderStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getEntries">
+      <http:operation location="/getEntries" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="addEntryToOrder">
+      <http:operation location="/addEntryToOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntryFromOrder">
+      <http:operation location="/deleteEntryFromOrder" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEntry">
+      <http:operation location="/deleteEntry" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getEntriesByOrderId">
+      <http:operation location="/getEntriesByOrderId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdress">
+      <http:operation location="/getDeliveryAdress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressesByClientId">
+      <http:operation location="/getDeliveryAdressesByClientId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getDeliveryAdressById">
+      <http:operation location="/getDeliveryAdressById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getCardsByClientId">
+      <http:operation location="/getCardsByClientId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getCardById">
+      <http:operation location="/getCardById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="modifyClientCard">
+      <http:operation location="/modifyClientCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClientCard">
+      <http:operation location="/deleteClientCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createClientCard">
+      <http:operation location="/createClientCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createTemporaryClientCard">
+      <http:operation location="/createTemporaryClientCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="modifyDeliveryAddress">
+      <http:operation location="/modifyDeliveryAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createDeliveryAddress">
+      <http:operation location="/createDeliveryAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDeliveryAddress">
+      <http:operation location="/deleteDeliveryAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getServicesList">
+      <http:operation location="/getServicesList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceById">
+      <http:operation location="/getServiceById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getClientTransactionById">
+      <http:operation location="/getClientTransactionById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="createClientTransaction">
+      <http:operation location="/createClientTransaction" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getStockIns">
+      <http:operation location="/getStockIns" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getStockInListByPcode">
+      <http:operation location="/getStockInListByPcode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getStockOuts">
+      <http:operation location="/getStockOuts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BrookeAndCoWebService">
+    <wsdl:port name="BrookeAndCoWebServiceSoap" binding="tns:BrookeAndCoWebServiceSoap">
+      <soap:address location="https://localhost:44333/BrookeAndCoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BrookeAndCoWebServiceSoap12" binding="tns:BrookeAndCoWebServiceSoap12">
+      <soap12:address location="https://localhost:44333/BrookeAndCoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BrookeAndCoWebServiceHttpGet" binding="tns:BrookeAndCoWebServiceHttpGet">
+      <http:address location="https://localhost:44333/BrookeAndCoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BrookeAndCoWebServiceHttpPost" binding="tns:BrookeAndCoWebServiceHttpPost">
+      <http:address location="https://localhost:44333/BrookeAndCoWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
